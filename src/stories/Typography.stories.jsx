@@ -32,4 +32,4 @@ const Template = (args) => {
   );
 };
 
-export const Primary = Template.bind({});
+export const Index = Template.bind({});
