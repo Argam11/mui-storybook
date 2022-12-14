@@ -22,8 +22,19 @@ const Template = (args) => {
       </Stack>
       <Stack spacing={2} direction="row">
         <TextField {...args} label="Form input" required />
-        <TextField {...args} type="password" label="Password" helperText="Don't share your password with anyone" />
-        <TextField {...args} type="password" label="Password" helperText="Don't share your password with anyone" error />
+        <TextField
+          {...args}
+          type="password"
+          label="Password"
+          helperText="Don't share your password with anyone"
+        />
+        <TextField
+          {...args}
+          type="password"
+          label="Password"
+          helperText="Don't share your password with anyone"
+          error
+        />
         <TextField {...args} type="password" label="Password" disabled />
         <TextField {...args} label="Read only" InputProps={{ readOnly: true }} />
       </Stack>
