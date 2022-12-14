@@ -2,6 +2,7 @@ import React from "react";
 import { TextField } from "components/TextField/TextField";
 import Stack from "@mui/material/Stack";
 import InputAdornment from "@mui/material/InputAdornment";
+import MenuItem from "@mui/material/MenuItem";
 
 export default {
   title: "Example/TextField",
@@ -39,6 +40,22 @@ const Template = (args) => {
           label="Weight"
           InputProps={{ endAdornment: <InputAdornment position="end">kg</InputAdornment> }}
         />
+      </Stack>
+      <Stack spacing={2} direction="row" width={250}>
+        <TextField
+          {...args}
+          select
+          fullWidth
+          label="Slect country"
+          size="small"
+          color="secondary"
+          helperText="Please select your counrty"
+          error
+        >
+          <MenuItem value="IN">India</MenuItem>
+          <MenuItem value="US">USA</MenuItem>
+          <MenuItem value="AU">Australia</MenuItem>
+        </TextField>
       </Stack>
     </Stack>
   );
