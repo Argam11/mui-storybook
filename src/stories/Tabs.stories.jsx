@@ -8,21 +8,27 @@ export default {
   component: Tabs,
 };
 
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
+const options = [
+  { id: 1, label: "Item One" },
+  { id: 2, label: "Item Two" },
+  { id: 3, label: "Item Three" },
+];
 
-const Template = (args) => {
+const Template = () => {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (_event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <Stack spacing={2} direction="row">
-      <Tabs aria-label="basic tabs example">
-        <Tab label="Item One" {...a11yProps(0)} />
-        <Tab label="Item Two" {...a11yProps(1)} />
-        <Tab label="Item Three" {...a11yProps(2)} />
-      </Tabs>
+      <Tabs
+        aria-label="basic tabs example"
+        options={options}
+        value={value}
+        onChange={handleChange}
+      />
     </Stack>
   );
 };
